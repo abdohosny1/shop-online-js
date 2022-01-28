@@ -1,0 +1,52 @@
+body{
+    background: url("/images/bg.png") no-repeat center;
+    background-size: cover
+}
+.headText{
+    text-align: center;
+    padding-left:  50;
+    padding-bottom:  20;
+    padding-top:  100;
+}
+h1{
+    color: #fff;
+    font-weight: bold;
+   
+}
+
+.bord{
+    width: 100;
+    background: #ff523b;
+    height: 10px;
+margin-left: 46%;
+text-align: center
+}
+.conactform{
+    text-align: center;
+    
+}
+.design-textfiled{
+    width: 600;
+    padding: 20;
+    text-align: start;
+    margin: 10;
+    
+}
+textarea{
+    width: 600;
+    height: 100;
+    resize: none;
+    padding: 20;
+    text-align: start;
+    margin: 10;
+}
+.send a{
+    width: 300;
+    height: 30;
+    text-align: center;
+    padding: 10;
+    margin: 10;
+    font-size: 20;
+    background: #ff523b;
+    color: #fff;
+}

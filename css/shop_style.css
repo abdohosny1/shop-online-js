@@ -1,0 +1,35 @@
+.shop{
+   
+    padding-top: 100px;
+    padding-left: 10;
+}
+
+.continue{
+    padding: 50px;
+    display: inline-block
+}
+.count{
+    background: black;
+    color: #d3cccc;
+    width: 20;
+    height: 20;
+    text-align: center;
+    display: inline-block;
+    padding: 4;
+}
+.next{
+    width: 50;
+    height: 20;
+    text-align: center;
+    display: inline-block;
+    padding: 4;
+    display: inline-block;
+    background: black;
+    color: #d3cccc;
+}
+.count:hover{
+    color: #F85D0A;
+}
+.next:hover{
+    color: #F85D0A;
+}

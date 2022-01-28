@@ -1,0 +1,69 @@
+body{
+    background: url("/images/bg.png") no-repeat center;
+    background-size: cover;
+}
+.about{
+    padding-top: 100;
+    padding-bottom: 30px;
+    
+}
+.about h1{
+    color: #fff;
+    text-align: center;
+}
+
+.allitem{
+    display: inline-block;
+}
+
+.oneitem{
+    padding-left: 20px;
+    padding-top: 150px;
+    text-align: center;
+    display: inline-block;
+    max-width: 30%;
+    
+    
+
+    
+}
+
+
+.des{
+    height: 0px;
+    font-size: 16px;
+    
+}
+.des a{
+ height: 1px;
+ padding: 0px;
+ padding-left: 10px;
+ padding-bottom: 5px;
+ font-size: 14;
+ font-weight: bold;
+ color: rgb(255, 241, 241);
+ 
+}
+.oneitem p{
+    font-size: 10px;
+    color: #000;
+}
+span{
+    width: 0px;
+    font-size: 15;
+    color: rgb(190, 185, 185);
+}
+.oneitem h2{
+    color: #fff;
+    font-size: 16;
+
+}
+.oneitem p{
+    color: rgb(190, 185, 185);
+    font-size: 16;
+}
+
+.oneitem img{
+    width: 100px;
+    height: 100px;
+}
