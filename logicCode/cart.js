@@ -187,7 +187,7 @@ function remove(id){
     if (confirm('Are you sure you want to Remove this Item ?')){
        
 
-           empty.style.display="none";
+         //  empty.style.display="none";
             data.forEach(function(e){
                
                 if(id==e.Id){
@@ -203,6 +203,12 @@ function remove(id){
                      div_table.style.display="none";
                      see_total.style.display="none";
                      empty.style.display="block";
+                     let e=this.document.getElementById("empty");
+                     let check=this.document.createElement("p");
+                     check.innerHTML=` <img src="/images/shopping-cart.png" class="empty_image">
+                     <p>Cart is Empty</p>`;
+              
+                     e.append(check);
                  }else{
                     localStorage.setItem("ArrayProduct", JSON.stringify(data));
                     CreateTBl();
