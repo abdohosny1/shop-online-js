@@ -11,9 +11,10 @@ window.addEventListener("load",function(e){
 
 
     checkUserValid();
-    // let user= ArrayOrder.filter(function(e){
+    // let user= ArrayOrder.find(function(e){
     //      e.UserId ===users[0].Id;
     //  }) ;
+    //  console.log(user);
     back_home_event.addEventListener("click",function(e){
       view_details_div.style.display="none"; 
 
@@ -214,6 +215,3 @@ function CreateTBl() {
 }
 
 
-function detailsProduct(){
-  alert("done");
-}

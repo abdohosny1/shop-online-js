@@ -426,3 +426,7 @@ width: 400
     /* justify-content:space-around; */
 
   }
+
+  .logout{
+    display: none;
+  }

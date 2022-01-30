@@ -149,7 +149,7 @@ export function productDeatils(e){
  
     console.log(`frist = ${typeof data}`);
        if(localStorage.getItem("ArrayProduct") === null){
-        let newProduct=new Cart(count,e.name,e.price,det_count.value,e.image,color_List.value,size_List.value);
+        let newProduct=new Cart(count,user[0].Id,e.name,e.price,det_count.value,e.image,color_List.value,size_List.value);
         ArrayOfProduct.push(newProduct);
  
         localStorage.setItem("ArrayProduct", JSON.stringify(ArrayOfProduct));
@@ -163,8 +163,9 @@ export function productDeatils(e){
       var last_element = All_data[All_data.length - 1];
          count=last_element.Id+1;
            
-         let newProduct=new Cart(count,e.name,e.price,det_count.value,e.image,color_List.value,size_List.value);
+         let newProduct=new Cart(count,user[0].Id,e.name,e.price,det_count.value,e.image,color_List.value,size_List.value);
          newArray=[...All_data];
+         console.log(`new array =${newArray}`);
         newArray.push(newProduct);
         localStorage.setItem("ArrayProduct", JSON.stringify(newArray));
         alert("Product added successfully");
@@ -204,7 +205,7 @@ export function productDeatils(e){
       image_banner.style.display="inline";
       hidde.style.display="block";
       carts_show.style.display="none";
-    // localStorage.clear();
+    localStorage.clear();
     });
  
     carts.append(det_img);

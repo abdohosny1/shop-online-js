@@ -111,26 +111,28 @@ window.addEventListener("load",function(e){
 user=JSON.parse(localStorage.getItem("ActiveUser"));
   if(user ===null  ){
     console.log("null");
-     
     go_to_login.innerHTML=` <a href="/html/login.html"> 
-    <img  class="imageicon" src="/images/profile-user.png" />
-</a>`;
+    <img  class="imageicon" src="/images/profile-user.png" /> </a>`;
 
   }else{
-    console.log("count");
- 
+    
+   // go_to_login.style.display="none";  
+   // go_to_logout.style.display="inline-block"; 
    go_to_login.innerHTML=`
    <a href="#"> 
     <img  class="imageicon" src="/images/logout.png" />
     </a>
    <span style="font-size: 15;"> ${user[0].Name}</span>`;
-go_to_login.addEventListener("click",function(e){
+   go_to_login.addEventListener("click",function(e){
   e.preventDefault();
-  flag=false;
+  
   if(confirm("Would you logout?")){
     user==null;
      localStorage.removeItem("ActiveUser");
-     this.innerHTML=` <a href="/html/login.html"> 
+    //  go_to_logout.style.display="none"  ; 
+    //  go_to_login.style.display="inline-block";  
+
+    go_to_login.innerHTML=` <a href="/html/login.html"> 
      <img  class="imageicon" src="/images/profile-user.png" />
  </a>`;
 

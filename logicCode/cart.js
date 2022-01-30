@@ -3,6 +3,8 @@
 
 let data=JSON.parse(localStorage.getItem("ArrayProduct"));
 let user=[];
+let copy=[];
+
 
 window.addEventListener("load",function(event){
      
@@ -39,10 +41,21 @@ window.addEventListener("load",function(event){
 
         
      }else{
-        empty.style.display="none";
-        CreateTBl();
-     getTotal();
-     }
+       
+      data.forEach(function(e){
+
+        if( e.UserId === user[0].Id){
+       // alert(`${e.UserId }  ${ users[0].Id}`);
+        copy.push(e);
+        console.log(e);
+         CreateTBl();
+         getTotal();
+
+         }
+      
+
+    });
+  }
     
    
    
@@ -62,7 +75,7 @@ function CreateTBl() {
     table.append(trH);
     //forEach elment inside Array of Object==>tr
   
-    data.forEach(function(e) {
+    copy.forEach(function(e) {
         let element_tr = document.createElement("tr");
         element_tr.setAttribute("class","cart_info");
         
@@ -129,7 +142,7 @@ function getTotal(){
 
   
 
-    data.forEach(function(e){
+    copy.forEach(function(e){
         All_total+= e.Price * e.Count;
       
     });
@@ -188,17 +201,17 @@ function remove(id){
        
 
          //  empty.style.display="none";
-            data.forEach(function(e){
+         copy.forEach(function(e){
                
                 if(id==e.Id){
                   
 
                    id--;
-                  data.splice(id,1);
+                   copy.splice(id,1);
 
                   // delete data[id];
                    
-                 if(data.length <= 0){
+                 if(copy.length <= 0){
                      localStorage.removeItem("ArrayProduct");
                      div_table.style.display="none";
                      see_total.style.display="none";
@@ -210,7 +223,7 @@ function remove(id){
               
                      e.append(check);
                  }else{
-                    localStorage.setItem("ArrayProduct", JSON.stringify(data));
+                    localStorage.setItem("ArrayProduct", JSON.stringify(copy));
                     CreateTBl();
                     getTotal();
 

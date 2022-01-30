@@ -27,8 +27,7 @@ window.addEventListener("load",function(){
 
       //add user
       bu_reg.addEventListener("click",function(e){
-    //    localStorage.removeItem("ArrayUser");
-    //    localStorage.clear();
+   
         if(checkUserName() && checkEmailReg() && checkPasswordReg() && checkPhone()){
             count++;
             let name=reg_name.value;
@@ -45,6 +44,8 @@ window.addEventListener("load",function(){
         
                 alert("User has been added successfully");
                 remove();
+                location.href="/html/login.html";
+
                 
          
             }else{
@@ -118,7 +119,7 @@ window.addEventListener("load",function(){
 
 
             }else{
-                alert("User don`t exist.");
+                alert("email don`t exist.");
             } 
          
         }else{
@@ -182,7 +183,7 @@ function checkEmailReg() {
 }
 function checkPassword() {
     var checkUSerFlag =false;
-    var pattern = /^[0-9a-zA-Z]*[0-9][0-9a-zA-Z]*$/;
+    var pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
     if (login_pass.value == "") {
         error_pass.innerText = "this field is required";
@@ -197,7 +198,7 @@ function checkPassword() {
         checkUSerFlag = false;
         login_pass.focus();
     }else if((!pattern.test(login_pass.value))){
-        error_pass.innerText = " password must have number";
+        error_pass.innerText = " password has at least one special character.";
         checkUSerFlag = false;
         login_pass.focus();
     }
@@ -211,22 +212,22 @@ function checkPassword() {
 }
 function checkPasswordReg() {
     var checkUSerFlag =false;
-    var pattern = /^[0-9a-zA-Z]*[0-9][0-9a-zA-Z]*$/;
+    var pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
     if (reg_pass.value == "") {
         reg_error_pass.innerText = "this field is required";
         checkUSerFlag = false;
         reg_pass.focus();
-    }else if(reg_pass.value.length < 8){
+    }else if(reg_pass.value.length < 6){
         reg_error_pass.innerText = "password is weak";
         checkUSerFlag = false;
         reg_pass.focus();
-    }else if(reg_pass.value.length > 20){
+    }else if(reg_pass.value.length > 16){
         reg_error_pass.innerText = "password length is max";
         checkUSerFlag = false;
         reg_pass.focus();
     }else if((!pattern.test(reg_pass.value))){
-        reg_error_pass.innerText = " password must have number";
+        reg_error_pass.innerText = " password has at least one special character.";
         checkUSerFlag = false;
         reg_pass.focus();
     }
